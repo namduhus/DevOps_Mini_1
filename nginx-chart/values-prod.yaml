@@ -9,3 +9,7 @@ resource:
   limits:
     cpu: "1000m"
     memory: "1024Mi"
+
+image:
+  repository: namduhus/nginx
+  tag: latest
