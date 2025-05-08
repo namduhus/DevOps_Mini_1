@@ -11,5 +11,5 @@ resource:
     memory: "1024Mi"
 
 image:
-  repository: namduhus/nginx
+  repository: dockerdu2914/nginx
   tag: latest
