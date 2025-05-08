@@ -23,4 +23,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: namduhus/nginx:latest
+          tags: dockerdu2914/nginx:latest
