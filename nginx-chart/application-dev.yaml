@@ -11,7 +11,7 @@ spec:
   source:
     repoURL: https://github.com/namduhus/DevOps_Mini_1.git
     targetRevision: main
-    chart: nginx-chart
+    path: ./nginx-chart
     helm:
       valueFiles:
         - values-dev.yaml
