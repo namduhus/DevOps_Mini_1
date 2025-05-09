@@ -9,4 +9,4 @@ resource:
     memory: "256Mi"
 image:
   repository: dockerdu2914/nginx
-  tag: sha-163aafa
+  tag: sha-5cf7d94
