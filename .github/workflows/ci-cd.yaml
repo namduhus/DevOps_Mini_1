@@ -9,6 +9,10 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: DevOps_Mini_1
+
     steps:
     - name: Checkout source
       uses: actions/checkout@v3
@@ -33,16 +37,16 @@ jobs:
     - name: Install yq
       run: sudo snap install yq
 
-    - name: Update image tag in all values.yaml
+    - name: Update image tag in values.yaml
       run: |
-        yq e -i '.image.tag = "${{ env.TAG }}"' DevOps_Mini_1/nginx-chart/values-dev.yaml
-        yq e -i '.image.tag = "${{ env.TAG }}"' DevOps_Mini_1/nginx-chart/values-staging.yaml
-        yq e -i '.image.tag = "${{ env.TAG }}"' DevOps_Mini_1/nginx-chart/values-prod.yaml
+        yq e -i '.image.tag = "${{ env.TAG }}"' nginx-chart/values-dev.yaml
+        yq e -i '.image.tag = "${{ env.TAG }}"' nginx-chart/values-staging.yaml
+        yq e -i '.image.tag = "${{ env.TAG }}"' nginx-chart/values-prod.yaml
 
     - name: Commit updated values.yaml files
       run: |
         git config user.name "ci-bot"
         git config user.email "ci@bot.local"
-        git add first_project/nginx-chart/values-*.yaml
+        git add nginx-chart/values-*.yaml
         git commit -m "CI: Update image tag to ${{ env.TAG }}"
         git push origin main
