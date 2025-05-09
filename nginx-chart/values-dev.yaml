@@ -1,15 +1,12 @@
 replicaCount: 1
-
 service:
   type: NodePort
   port: 80
   nodePort: 30080
-
 resource:
   limits:
     cpu: "500m"
     memory: "256Mi"
-
 image:
   repository: dockerdu2914/nginx
-  tag: latest
+  tag: sha-c2f9bb7
