@@ -23,10 +23,10 @@ Helm Chart, Prometheus/Grafana 모니터링, Auto Rollback, 이미지 자동 태
 ```mermaid
 graph TD
     A[개발자 Git Push] --> B[GitHub Actions]
-    B --> C[Docker 이미지 빌드 및 태그 (sha)]
+    B --> C[Docker 이미지 빌드 및 태그]
     C --> D[DockerHub Push]
-    D --> E[values.yaml 자동 업데이트 (yq)]
-    E --> F[Git Commit & Push]
+    D --> E[values.yaml 자동 업데이트]
+    E --> F[GitHub Commit & Push]
     F --> G[ArgoCD 감지 & 자동 배포]
     G --> H[Kubernetes 배포 완료]
 ```
